@@ -1,0 +1,24 @@
+:root {
+    /* Primitive values */
+
+    /* spacing | padding | margin | radius */
+    --0px: 0px;
+    --4px: 4px;
+    --8px: 8px;
+    --16px: 16px;
+    --24px: 24px;
+    --32px: 32px;
+    --48px: 48px;
+    --64px: 64px;
+    --96px: 96px;
+    --128px: 128px;
+    --160px: 160px;
+    --200px: 200px;
+    --9999px: 9999px;
+
+    /* colors */
+    /* basics */
+    --white: #e5e5e5;
+    --red: #ff4747;
+    --dark-grey-50: #e9e9e9;
+}

@@ -1,7 +1,291 @@
+/* ========================================
+   Design Tokens - PrimitivosBasicos
+   Generated from Figma
+   ======================================== */
+
+:root {
+    /* Spacing | Padding | Margin | Radius */
+    --0px: 0px;
+    --4px: 4px;
+    --8px: 8px;
+    --16px: 16px;
+    --24px: 24px;
+    --32px: 32px;
+    --48px: 48px;
+    --64px: 64px;
+    --96px: 96px;
+    --128px: 128px;
+    --160px: 160px;
+    --200px: 200px;
+    --9999px: 9999px;
+
+    /* Font Sizes - Desktop (Major Third Scale) */
+    --xsm-8px: 8px;
+    --sm-12px: 12px;
+    --p-16px: 16px;
+    --h6-20px: 20px;
+    --h5-24px: 24px;
+    --h4-32px: 32px;
+    --h3-40px: 40px;
+    --h2-48px: 48px;
+    --h1-60px: 60px;
+
+    /* Line Heights - Desktop (Major Third Scale) */
+    --lh-xsm-12px: 12px;
+    --lh-sm-18px: 18px;
+    --lh-p-24px: 24px;
+    --lh-h6-28px: 28px;
+    --lh-h5-32px: 32px;
+    --lh-h4-38px: 38px;
+    --lh-h3-44px: 44px;
+    --lh-h2-52px: 52px;
+    --lh-h1-68px: 68px;
+
+    /* Colors - Basic */
+    --color-white: #e5e5e5;
+    --color-red: #ff4747;
+
+    /* Colors - Dark Gray */
+    --color-dark-gray-50: #e9e9e9;
+    --color-dark-gray-100: #bbbbbb;
+    --color-dark-gray-200: #9a9a9a;
+    --color-dark-gray-300: #6c6c6c;
+    --color-dark-gray-400: #4f4f4f;
+    --color-dark-gray-500: #232323;
+    --color-dark-gray-600: #202020;
+    --color-dark-gray-700: #191919;
+    --color-dark-gray-800: #131313;
+    --color-dark-gray-900: #0f0f0f;
+
+    /* Colors - Ice Blue */
+    --color-ice-blue-50: #eefefe;
+    --color-ice-blue-100: #cafbfb;
+    --color-ice-blue-200: #b0f9f9;
+    --color-ice-blue-300: #8cf6f6;
+    --color-ice-blue-400: #76f5f5;
+    --color-ice-blue-500: #54f2f2;
+    --color-ice-blue-600: #4cdcdc;
+    --color-ice-blue-700: #3cacac;
+    --color-ice-blue-800: #2e8585;
+    --color-ice-blue-900: #236666;
+
+    /* Colors - Intense Green */
+    --color-green-50: #f9fdef;
+    --color-green-100: #ebface;
+    --color-green-200: #e1f7b7;
+    --color-green-300: #d3f496;
+    --color-green-400: #cbf181;
+    --color-green-500: #beee62;
+    --color-green-600: #add959;
+    --color-green-700: #87a946;
+    --color-green-800: #698336;
+    --color-green-900: #506429;
+
+    /* Colors - Atomic Tangerine */
+    --color-atomic-tangerine-50: #fef1eb;
+    --color-atomic-tangerine-100: #fcd4c2;
+    --color-atomic-tangerine-200: #fabfa5;
+    --color-atomic-tangerine-300: #f8a27c;
+    --color-atomic-tangerine-400: #f69062;
+    --color-atomic-tangerine-500: #f4743b;
+    --color-atomic-tangerine-600: #de6a36;
+    --color-atomic-tangerine-700: #ad522a;
+    --color-atomic-tangerine-800: #864020;
+    --color-atomic-tangerine-900: #663119;
+
+    /* ========================================
+       Semantic Tokens
+       ======================================== */
+
+    /* Padding */
+    --p-0px: var(--0px);
+    --p-4px: var(--4px);
+    --p-8px: var(--8px);
+    --p-16px: var(--16px);
+    --p-24px: var(--24px);
+    --p-32px: var(--32px);
+    --p-48px: var(--48px);
+    --p-64px: var(--64px);
+    --p-96px: var(--96px);
+    --p-128px: var(--128px);
+    --p-160px: var(--160px);
+    --p-200px: var(--200px);
+
+    /* Spacing */
+    --spacing-0px: var(--0px);
+    --spacing-4px: var(--4px);
+    --spacing-8px: var(--8px);
+    --spacing-16px: var(--16px);
+    --spacing-24px: var(--24px);
+    --spacing-32px: var(--32px);
+    --spacing-48px: var(--48px);
+    --spacing-64px: var(--64px);
+    --spacing-96px: var(--96px);
+    --spacing-128px: var(--128px);
+    --spacing-160px: var(--160px);
+    --spacing-200px: var(--200px);
+
+    /* Border Radius */
+    --border-radius-0px: var(--0px);
+    --border-radius-4px: var(--4px);
+    --border-radius-8px: var(--8px);
+    --border-radius-16px: var(--16px);
+    --border-radius-24px: var(--24px);
+    --border-radius-32px: var(--32px);
+    --border-radius-48px: var(--48px);
+    --border-radius-64px: var(--64px);
+    --border-radius-full: var(--9999px);
+
+    /* Font Sizes - Semantic */
+    --fs-xsm-8px: var(--xsm-8px);
+    --fs-sm-12px: var(--sm-12px);
+    --fs-p-16: var(--p-16px);
+    --fs-h6-20px: var(--h6-20px);
+    --fs-h5-24px: var(--h5-24px);
+    --fs-h4-32px: var(--h4-32px);
+    --fs-h3-40px: var(--h3-40px);
+    --fs-h2-48px: var(--h2-48px);
+    --fs-h1-60px: var(--h1-60px);
+
+    /* Line Heights - Semantic */
+    --lh-xsm-12px: var(--lh-xsm-12px);
+    --lh-sm-18px: var(--lh-sm-18px);
+    --lh-p-24px: var(--lh-p-24px);
+    --lh-h6-28px: var(--lh-h6-28px);
+    --lh-h5-32px: var(--lh-h5-32px);
+    --lh-h4-38px: var(--lh-h4-38px);
+    --lh-h3-44px: var(--lh-h3-44px);
+    --lh-h2-52px: var(--lh-h2-52px);
+    --lh-h1-68px: var(--lh-h1-68px);
+
+    /* Colors - Red (Warning) */
+    --red-warning-texts: var(--color-red);
+    --red-warning-borders: var(--color-red);
+    --red-warning-bgs: var(--color-red);
+
+    /* Colors - Basic */
+    --dark-gray-bgs: var(--color-dark-gray-500);
+    --dark-gray-secundary-bg: var(--color-dark-gray-700);
+    --dark-gray-borders: var(--color-dark-gray-500);
+    --dark-gray-textcolor: var(--color-dark-gray-500);
+    --main-white-bgs: var(--color-white);
+    --main-white-borders: var(--color-white);
+    --main-white-textcolor: var(--color-white);
+
+    /* Colors - Neon Blue (Ice Blue) */
+    --neon-blue-border: var(--color-ice-blue-500);
+    --neon-blue-icons-fill: var(--color-ice-blue-500);
+    --neon-blue-buttons-bg: var(--color-ice-blue-500);
+    --neon-blue-buttons-border: var(--color-ice-blue-500);
+    --neon-blue-bg: var(--color-ice-blue-500);
+    --neon-blue-textcolor: var(--color-ice-blue-500);
+
+    /* Colors - Intense Green */
+    --green-intense-border: var(--color-green-500);
+    --green-intense-icons-fill: var(--color-green-500);
+    --green-intense-buttons-bg: var(--color-green-500);
+    --green-intense-secundary-button-bg: var(--color-green-100);
+    --green-intense-buttons-border: var(--color-green-500);
+    --green-intense-bg: var(--color-green-500);
+    --green-intense-textcolor: var(--color-green-500);
+
+    /* Colors - Intense Orange (Atomic Tangerine) */
+    --orange-border: var(--color-atomic-tangerine-500);
+    --orange-icons-fill: var(--color-atomic-tangerine-500);
+    --orange-buttons-bg: var(--color-atomic-tangerine-500);
+    --orange-buttons-border: var(--color-atomic-tangerine-500);
+    --orange-bg: var(--color-atomic-tangerine-500);
+    --orange-textcolor: var(--color-atomic-tangerine-500);
+}
+
+@media (max-width: 768px) {
+    :root {
+        /* Font Sizes - Mobile */
+        --h6-20px: 18px;
+        --h5-24px: 20px;
+        --h4-32px: 24px;
+        --h3-40px: 26px;
+        --h2-48px: 30px;
+        --h1-60px: 32px;
+
+        /* Line Heights - Mobile */
+        --lh-h5-32px: 28px;
+        --lh-h4-38px: 32px;
+        --lh-h3-44px: 32px;
+        --lh-h2-52px: 36px;
+        --lh-h1-68px: 40px;
+
+        /* Font Sizes - Mobile Semantic Tokens */
+        --fs-h6-20px: 18px;
+        --fs-h5-24px: 20px;
+        --fs-h4-32px: 24px;
+        --fs-h3-40px: 26px;
+        --fs-h2-48px: 30px;
+        --fs-h1-60px: 32px;
+
+        /* Line Heights - Mobile Semantic Tokens */
+        --lh-h5-32px: 28px;
+        --lh-h4-38px: 32px;
+        --lh-h3-44px: 32px;
+        --lh-h2-52px: 36px;
+        --lh-h1-68px: 40px;
+    }
+}
+
+h1 {
+    font-size: var(--fs-h1-60px);
+    line-height: var(--lh-h1-68px);
+}
+
+h2 {
+    font-size: var(--fs-h2-48px);
+    line-height: var(--lh-h2-52px);
+}
+
+h3 {
+    font-size: var(--fs-h3-40px);
+    line-height: var(--lh-h3-44px);
+}
+
+h4 {
+    font-size: var(--fs-h4-32px);
+    line-height: var(--lh-h4-38px);
+}
+
+h5 {
+    font-size: var(--fs-h5-24px);
+    line-height: var(--lh-h5-32px);
+}
+
+h6 {
+    font-size: var(--fs-h6-20px);
+    line-height: var(--lh-h6-28px);
+}
+
+p,
+span,
+a,
+label,
+li {
+    font-size: var(--fs-p-16);
+    line-height: var(--lh-p-24px);
+}
+
+small {
+    font-size: var(--fs-sm-12px);
+    line-height: var(--lh-sm-18px);
+}
+
+.xsm {
+    font-size: var(--fs-xsm-8px);
+    line-height: var(--lh-xsm-12px);
+}
+
 *,
 *::before,
 *::after {
     box-sizing: border-box;
+    margin: 0;
 }
 
 body {
@@ -17,4 +301,5 @@ body {
         "header"
         "main"
         "footer";
+    padding: 0px 24px;
 }
