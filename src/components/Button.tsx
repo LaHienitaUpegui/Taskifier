@@ -2,7 +2,7 @@ import "../styles/button.css";
 
 type ButtonProps = {
     innerText: string;
-    buttonType: "primary" | "secondary";
+    buttonType: "primary" | "secundary";
     onClickFunction?: () => void;
 };
 

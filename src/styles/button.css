@@ -12,3 +12,9 @@ button {
     color: var(--dark-gray-textcolor);
     border: none;
 }
+
+.secundary {
+    background-color: var(--green-intense-secundary-button-bg);
+    border: none;
+    color: var(--dark-gray-textcolor);
+}
