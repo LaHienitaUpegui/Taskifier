@@ -1,12 +1,29 @@
+import { Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import AllProjects from "./pages/AllProjects";
+import Layout from "./layouts/Layout";
+
 function App() {
     return (
-        <>
-            <header>Este es el header</header>
+        <Routes>
+            <Route
+                path="/"
+                element={
+                    <Layout>
+                        <HomePage />
+                    </Layout>
+                }
+            />
 
-            <main>Este es el main</main>
-
-            <footer>Este es el footer</footer>
-        </>
+            <Route
+                path="/projects"
+                element={
+                    <Layout>
+                        <AllProjects />
+                    </Layout>
+                }
+            />
+        </Routes>
     );
 }
 
