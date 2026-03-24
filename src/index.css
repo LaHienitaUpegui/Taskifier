@@ -191,6 +191,7 @@
     --main-white-bgs: var(--color-white);
     --main-white-borders: var(--color-white);
     --main-white-textcolor: var(--color-white);
+    --main-white-icons-fill: var(--color-white);
 
     /* Colors - Neon Blue (Ice Blue) */
     --neon-blue-border: var(--color-ice-blue-500);
