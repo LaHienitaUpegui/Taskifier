@@ -7,6 +7,11 @@
     justify-content: space-between;
 
     padding: var(--pad-16px) 0;
+
+    .menu-icon {
+        border: 1px solid var(--neon-blue-buttons-border);
+        border-radius: var(--border-radius-8px);
+    }
 }
 
 .nav__container {

@@ -15,8 +15,23 @@ function Header() {
                         className="taskifier-logo"
                     />
                 </NavLink>
-
-                <button onClick={() => setIsMenuOpen(!isMenuOpen)}>Menu</button>
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 24 24"
+                    className="menu-icon"
+                    onClick={() => setIsMenuOpen(!isMenuOpen)}
+                >
+                    <path
+                        fill="none"
+                        stroke="var(--neon-blue-icons-fill)"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M6 8h12M6 12h12M6 16h12"
+                    />
+                </svg>
 
                 <nav
                     className={`nav__container ${isMenuOpen ? "nav__container-open" : ""}`}
