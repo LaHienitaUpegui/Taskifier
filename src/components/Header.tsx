@@ -26,9 +26,9 @@ function Header() {
                     <path
                         fill="none"
                         stroke="var(--neon-blue-icons-fill)"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
                         d="M6 8h12M6 12h12M6 16h12"
                     />
                 </svg>
