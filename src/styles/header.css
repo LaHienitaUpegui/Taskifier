@@ -1,7 +1,69 @@
 .header {
     grid-area: header;
+    position: relative;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    padding: var(--pad-16px) 0;
+}
+
+.nav__container {
+    display: none;
+}
+
+.nav__container.nav__container-open {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    height: 100%;
+    height: 100dvh;
+    width: 100%;
+
+    padding: var(--pad-24px);
+    background-color: var(--main-white-bgs);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    .nav-and-items {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: var(--spacing-32px);
+    }
+
+    .title-and-icon {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .nav-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-16px);
+    }
+
+    .nav__item a {
+        display: block;
+        padding: var(--pad-16px);
+        text-decoration: none;
+        color: black;
+    }
+
+    .nav__item a.active {
+        font-weight: bold;
+        background-color: green;
+    }
 }

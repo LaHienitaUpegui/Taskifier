@@ -1,0 +1,33 @@
+.homepage {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-24px);
+    padding: var(--pad-24px);
+
+    .projects-displayer {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-8px);
+    }
+
+    .project-container {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-24px);
+        padding: var(--pad-16px);
+
+        background-color: var(--dark-gray-bgs);
+        border: 1px solid var(--neon-blue-border);
+        border-radius: var(--border-radius-16px);
+    }
+
+    .title-and-desc {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-8px);
+    }
+
+    .project-title {
+        font-weight: bold;
+    }
+}

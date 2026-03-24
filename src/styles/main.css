@@ -1,3 +1,6 @@
 .main {
     grid-area: main;
+
+    border: 1px solid var(--neon-blue-border);
+    border-radius: var(--border-radius-16px);
 }

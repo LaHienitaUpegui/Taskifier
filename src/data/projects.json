@@ -1,0 +1,253 @@
+[
+    {
+        "id": 1,
+        "name": "Website Redesign",
+        "description": "Complete overhaul of the company website with modern UI/UX",
+        "creationDate": "2026-01-15T10:00:00Z",
+        "status": "active",
+        "tasks": [
+            {
+                "id": 1,
+                "title": "Design homepage mockup",
+                "status": "completed"
+            },
+            {
+                "id": 2,
+                "title": "Create responsive navigation",
+                "status": "completed"
+            },
+            {
+                "id": 3,
+                "title": "Implement contact form",
+                "status": "completed"
+            },
+            { "id": 4, "title": "Add dark mode toggle", "status": "completed" },
+            {
+                "id": 5,
+                "title": "Optimize images for web",
+                "status": "completed"
+            },
+            {
+                "id": 6,
+                "title": "Write content for About page",
+                "status": "pending"
+            },
+            {
+                "id": 7,
+                "title": "Create blog section layout",
+                "status": "pending"
+            },
+            {
+                "id": 8,
+                "title": "Add footer with social links",
+                "status": "pending"
+            },
+            {
+                "id": 9,
+                "title": "Implement SEO meta tags",
+                "status": "pending"
+            },
+            { "id": 10, "title": "Test across browsers", "status": "pending" }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Mobile App Development",
+        "description": "Build a cross-platform mobile app for task management",
+        "creationDate": "2026-02-01T09:00:00Z",
+        "status": "active",
+        "tasks": [
+            {
+                "id": 1,
+                "title": "Set up React Native project",
+                "status": "completed"
+            },
+            {
+                "id": 2,
+                "title": "Create authentication flow",
+                "status": "completed"
+            },
+            {
+                "id": 3,
+                "title": "Design task creation screen",
+                "status": "completed"
+            },
+            {
+                "id": 4,
+                "title": "Implement push notifications",
+                "status": "completed"
+            },
+            {
+                "id": 5,
+                "title": "Add offline data sync",
+                "status": "completed"
+            },
+            { "id": 6, "title": "Build task list view", "status": "pending" },
+            {
+                "id": 7,
+                "title": "Implement search functionality",
+                "status": "pending"
+            },
+            {
+                "id": 8,
+                "title": "Add task categories/tags",
+                "status": "pending"
+            },
+            { "id": 9, "title": "Create settings screen", "status": "pending" },
+            {
+                "id": 10,
+                "title": "Prepare App Store submission",
+                "status": "pending"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "API Documentation",
+        "description": "Document all REST API endpoints with examples",
+        "creationDate": "2026-02-10T11:00:00Z",
+        "status": "completed",
+        "tasks": [
+            {
+                "id": 1,
+                "title": "List all API endpoints",
+                "status": "completed"
+            },
+            {
+                "id": 2,
+                "title": "Document authentication endpoints",
+                "status": "completed"
+            },
+            {
+                "id": 3,
+                "title": "Write user resource docs",
+                "status": "completed"
+            },
+            {
+                "id": 4,
+                "title": "Add request/response examples",
+                "status": "completed"
+            },
+            { "id": 5, "title": "Document error codes", "status": "completed" },
+            {
+                "id": 6,
+                "title": "Write authentication guide",
+                "status": "pending"
+            },
+            {
+                "id": 7,
+                "title": "Create rate limiting docs",
+                "status": "pending"
+            },
+            {
+                "id": 8,
+                "title": "Add SDK integration examples",
+                "status": "pending"
+            },
+            {
+                "id": 9,
+                "title": "Set up Swagger/OpenAPI spec",
+                "status": "pending"
+            },
+            {
+                "id": 10,
+                "title": "Review with development team",
+                "status": "pending"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Database Migration",
+        "description": "Migrate legacy MySQL database to PostgreSQL",
+        "creationDate": "2026-02-20T08:30:00Z",
+        "status": "active",
+        "tasks": [
+            {
+                "id": 1,
+                "title": "Audit existing database schema",
+                "status": "completed"
+            },
+            {
+                "id": 2,
+                "title": "Create migration scripts",
+                "status": "completed"
+            },
+            {
+                "id": 3,
+                "title": "Set up PostgreSQL instance",
+                "status": "completed"
+            },
+            { "id": 4, "title": "Test data integrity", "status": "completed" },
+            {
+                "id": 5,
+                "title": "Update connection strings",
+                "status": "completed"
+            },
+            { "id": 6, "title": "Migrate user accounts", "status": "pending" },
+            {
+                "id": 7,
+                "title": "Migrate transaction history",
+                "status": "pending"
+            },
+            { "id": 8, "title": "Update ORM models", "status": "pending" },
+            {
+                "id": 9,
+                "title": "Run performance benchmarks",
+                "status": "pending"
+            },
+            {
+                "id": 10,
+                "title": "Decommission old MySQL server",
+                "status": "pending"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "name": "User Onboarding Flow",
+        "description": "Design and implement new user onboarding experience",
+        "creationDate": "2026-03-01T14:00:00Z",
+        "status": "active",
+        "tasks": [
+            {
+                "id": 1,
+                "title": "Research best onboarding practices",
+                "status": "completed"
+            },
+            { "id": 2, "title": "Design wireframes", "status": "completed" },
+            {
+                "id": 3,
+                "title": "Create animated tutorials",
+                "status": "completed"
+            },
+            {
+                "id": 4,
+                "title": "Implement progress indicators",
+                "status": "completed"
+            },
+            {
+                "id": 5,
+                "title": "Add skip option for power users",
+                "status": "completed"
+            },
+            { "id": 6, "title": "Build welcome screen", "status": "pending" },
+            {
+                "id": 7,
+                "title": "Create profile setup step",
+                "status": "pending"
+            },
+            { "id": 8, "title": "Add feature highlights", "status": "pending" },
+            {
+                "id": 9,
+                "title": "Implement onboarding analytics",
+                "status": "pending"
+            },
+            {
+                "id": 10,
+                "title": "A/B test different flows",
+                "status": "pending"
+            }
+        ]
+    }
+]

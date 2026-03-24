@@ -1,0 +1,14 @@
+button {
+    border: none;
+    border-radius: var(--border-radius-8px);
+    font-family: "Inter", sans-serif;
+    font-weight: bold;
+    padding: var(--pad-8px) var(--pad-16px);
+    cursor: pointer;
+}
+
+.primary {
+    background-color: var(--green-intense-buttons-bg);
+    color: var(--dark-gray-textcolor);
+    border: none;
+}

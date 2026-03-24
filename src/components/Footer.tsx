@@ -3,7 +3,9 @@ import "../styles/footer.css";
 function Footer() {
     return (
         <footer className="footer">
-            <p>This is the footer</p>
+            <small>This is the footer</small>
+
+            <div className="github-logo"></div>
         </footer>
     );
 }

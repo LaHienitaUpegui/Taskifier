@@ -1,12 +1,75 @@
+import { useState } from "react";
+import { NavLink } from "react-router-dom";
 import "../styles/header.css";
 
 function Header() {
-    return (
-        <header className="header">
-            <p>Taskifier</p>
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-            <button>Menu</button>
-        </header>
+    return (
+        <>
+            <header className="header">
+                <NavLink to="/">
+                    <img
+                        src="/imgs/taskifier_logo.svg"
+                        alt="Taskifier Logo"
+                        className="taskifier-logo"
+                    />
+                </NavLink>
+
+                <button onClick={() => setIsMenuOpen(!isMenuOpen)}>Menu</button>
+
+                <nav
+                    className={`nav__container ${isMenuOpen ? "nav__container-open" : ""}`}
+                >
+                    <div className="nav-and-items">
+                        <div className="title-and-icon">
+                            <p>Navigation menu</p>
+
+                            <button onClick={() => setIsMenuOpen(false)}>
+                                Close
+                            </button>
+                        </div>
+
+                        <ul className="nav-list">
+                            <li className="nav__item">
+                                <NavLink
+                                    to="/"
+                                    onClick={() => setIsMenuOpen(false)}
+                                >
+                                    Home
+                                </NavLink>
+                            </li>
+                            <li className="nav__item">
+                                <NavLink
+                                    to="/projects"
+                                    onClick={() => setIsMenuOpen(false)}
+                                >
+                                    Projects
+                                </NavLink>
+                            </li>
+                            <li className="nav__item">
+                                <NavLink
+                                    to="/statistics"
+                                    onClick={() => setIsMenuOpen(false)}
+                                >
+                                    Statistics
+                                </NavLink>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div
+                        className="logo"
+                        style={{
+                            width: "32px",
+                            height: "32px",
+                            backgroundColor: "blue",
+                            borderRadius: "50%",
+                        }}
+                    ></div>
+                </nav>
+            </header>
+        </>
     );
 }
 
