@@ -2,6 +2,7 @@ import projectData from "../data/projects.json";
 import "../styles/home-page.css";
 import type { Project } from "../types";
 import Button from "../components/Button";
+import { Link } from "react-router-dom";
 
 function HomePage() {
     const mockProjects: Project[] = projectData as Project[];
@@ -22,7 +23,12 @@ function HomePage() {
                             <small>{project.description}</small>
                         </div>
 
-                        <Button innerText="Open project" buttonType="primary" />
+                        <Link to={`/projects/${project.id}`}>
+                            <Button
+                                innerText="Open project"
+                                buttonType="primary"
+                            />
+                        </Link>
                     </div>
                 ))}
             </section>

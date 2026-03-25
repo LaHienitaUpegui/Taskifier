@@ -188,6 +188,7 @@
     --dark-gray-secundary-bg: var(--color-dark-gray-700);
     --dark-gray-borders: var(--color-dark-gray-500);
     --dark-gray-textcolor: var(--color-dark-gray-500);
+    --dark-gray-icons-fill: var(--color-dark-gray-500);
     --main-white-bgs: var(--color-white);
     --main-white-borders: var(--color-white);
     --main-white-textcolor: var(--color-white);
