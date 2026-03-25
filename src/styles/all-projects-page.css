@@ -64,6 +64,21 @@
     flex-direction: column;
     gap: var(--spacing-8px);
 
+    .create-project-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: var(--spacing-8px);
+        background-color: transparent;
+        border: none;
+        background-color: var(--neon-blue-buttons-bg);
+        border-radius: var(--border-radius-8px);
+        padding: var(--pad-4px) var(--pad-16px);
+        color: var(--dark-gray-textcolor);
+        cursor: pointer;
+        width: fit-content;
+    }
+
     .project-container {
         display: flex;
         flex-direction: column;
@@ -81,5 +96,19 @@
     .buttons {
         display: flex;
         gap: var(--spacing-8px);
+    }
+
+    .no-projects-found {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: var(--pad-16px);
+        gap: var(--spacing-8px);
+
+        p {
+            font-weight: bold;
+            color: var(--red-warning-texts);
+        }
     }
 }
