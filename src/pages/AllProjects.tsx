@@ -3,7 +3,9 @@ import "../styles/all-projects-page.css";
 import type { Project } from "../types";
 import allProjectsData from "../data/projects.json";
 import Button from "../components/Button";
-import ProjectInfoModal from "../components/ProjectInfoModal";
+import GeneralModal from "../components/GeneralModal";
+import SelectedProjectInfo from "../components/SelectedProjectInfo";
+import { Link } from "react-router-dom";
 
 function AllProjects() {
     const mockProjects: Project[] = allProjectsData as Project[];
@@ -92,10 +94,12 @@ function AllProjects() {
                                     {project.name}
                                 </h6>
                                 <div className="buttons">
-                                    <Button
-                                        innerText="Open project"
-                                        buttonType="primary"
-                                    />
+                                    <Link to={`/projects/${project.id}`}>
+                                        <Button
+                                            innerText="Open project"
+                                            buttonType="primary"
+                                        />
+                                    </Link>
                                     <Button
                                         innerText="See info"
                                         buttonType="secundary"
@@ -115,72 +119,17 @@ function AllProjects() {
                 )}
             </section>
 
-            <ProjectInfoModal
+            <GeneralModal
                 isOpen={!!selectedProject}
                 onClose={() => handleSetSelectedProject(null)}
             >
                 {selectedProject && (
-                    <div className="selected-project-info">
-                        <div className="title-and-desc">
-                            <h3>{selectedProject.name}</h3>
-                            <small>{selectedProject.description}</small>
-                        </div>
-
-                        <div className="tasks-info-container">
-                            <p className="tasks-subtitle">
-                                Tasks of the project
-                            </p>
-
-                            <div className="tasks-information">
-                                <div className="info-container">
-                                    <small className="info-subtitle">
-                                        Completed
-                                    </small>
-                                    <small>
-                                        {
-                                            selectedProject.tasks.filter(
-                                                (task) =>
-                                                    task.status === "completed",
-                                            ).length
-                                        }
-                                    </small>
-                                </div>
-
-                                <div className="info-container">
-                                    <small className="info-subtitle">
-                                        Pending
-                                    </small>
-                                    <small>
-                                        {
-                                            selectedProject.tasks.filter(
-                                                (task) =>
-                                                    task.status === "pending",
-                                            ).length
-                                        }
-                                    </small>
-                                </div>
-
-                                <div className="info-container">
-                                    <small className="info-subtitle">
-                                        Total
-                                    </small>
-                                    <small>
-                                        {selectedProject.tasks.length}
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
-
-                        <Button
-                            innerText="Open project"
-                            buttonType="primary"
-                            onClickFunction={() =>
-                                handleSetSelectedProject(null)
-                            }
-                        />
-                    </div>
+                    <SelectedProjectInfo
+                        project={selectedProject}
+                        onClose={() => handleSetSelectedProject(null)}
+                    />
                 )}
-            </ProjectInfoModal>
+            </GeneralModal>
         </div>
     );
 }
