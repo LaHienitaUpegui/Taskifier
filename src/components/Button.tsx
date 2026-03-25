@@ -4,11 +4,21 @@ type ButtonProps = {
     innerText: string;
     buttonType: "primary" | "secundary";
     onClickFunction?: () => void;
+    isSubmitButton?: boolean;
 };
 
-function Button({ innerText, buttonType, onClickFunction }: ButtonProps) {
+function Button({
+    innerText,
+    buttonType,
+    onClickFunction,
+    isSubmitButton,
+}: ButtonProps) {
     return (
-        <button className={buttonType} onClick={onClickFunction}>
+        <button
+            className={buttonType}
+            onClick={onClickFunction}
+            type={isSubmitButton ? "submit" : "button"}
+        >
             {innerText}
         </button>
     );

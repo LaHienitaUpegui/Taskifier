@@ -5,6 +5,7 @@ import allProjectsData from "../data/projects.json";
 import Button from "../components/Button";
 import GeneralModal from "../components/GeneralModal";
 import SelectedProjectInfo from "../components/SelectedProjectInfo";
+import CreateProjectForm from "../components/CreateProjectForm";
 import { Link } from "react-router-dom";
 
 function AllProjects() {
@@ -15,6 +16,8 @@ function AllProjects() {
     );
     const [statusSelected, setStatusSelected] = useState<string>("active");
     const [searchTerm, setSearchTerm] = useState<string>("");
+    const [createProjectModalOpen, setCreateProjectModalOpen] =
+        useState<boolean>(false);
 
     const filteredProjects = useMemo(() => {
         return mockProjects.filter((project) => {
@@ -70,7 +73,10 @@ function AllProjects() {
                 {filteredProjects.length > 0 ? (
                     <>
                         {statusSelected === "active" && (
-                            <button className="create-project-button">
+                            <button
+                                className="create-project-button"
+                                onClick={() => setCreateProjectModalOpen(true)}
+                            >
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="28"
@@ -129,6 +135,15 @@ function AllProjects() {
                         onClose={() => handleSetSelectedProject(null)}
                     />
                 )}
+            </GeneralModal>
+
+            <GeneralModal
+                isOpen={createProjectModalOpen}
+                onClose={() => setCreateProjectModalOpen(false)}
+            >
+                <CreateProjectForm
+                    onClose={() => setCreateProjectModalOpen(false)}
+                />
             </GeneralModal>
         </div>
     );
