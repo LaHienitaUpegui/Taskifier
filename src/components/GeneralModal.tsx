@@ -1,5 +1,5 @@
 import { createPortal } from "react-dom";
-import "../styles/project-info-modal.css";
+import "../styles/general-modal.css";
 
 type ProjectInfoModalProps = {
     isOpen: boolean;
@@ -7,11 +7,7 @@ type ProjectInfoModalProps = {
     children: React.ReactNode;
 };
 
-function ProjectInfoModal({
-    isOpen,
-    onClose,
-    children,
-}: ProjectInfoModalProps) {
+function GeneralModal({ isOpen, onClose, children }: ProjectInfoModalProps) {
     if (!isOpen) return null;
 
     return createPortal(
@@ -44,4 +40,4 @@ function ProjectInfoModal({
     );
 }
 
-export default ProjectInfoModal;
+export default GeneralModal;
