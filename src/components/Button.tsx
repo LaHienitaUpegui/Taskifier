@@ -2,8 +2,8 @@ import type React from "react";
 import "../styles/button.css";
 
 type ButtonProps = {
-    innerText: string;
-    buttonType: "primary" | "secundary" | "danger";
+    innerText?: string;
+    buttonType: "primary" | "secundary" | "danger" | "blue-button";
     onClickFunction?: () => void;
     isSubmitButton?: boolean;
     icon?: React.ReactNode | null;

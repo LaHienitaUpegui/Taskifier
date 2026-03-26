@@ -28,3 +28,9 @@ button {
     border: 1px solid var(--red-warning-borders);
     color: var(--red-warning-texts);
 }
+
+.blue-button {
+    background-color: transparent;
+    border: 1px solid var(--neon-blue-border);
+    color: var(--neon-blue-buttons-bg);
+}
