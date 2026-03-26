@@ -1,15 +1,27 @@
 import "../styles/create-project-form.css";
 import Button from "./Button";
+import type { Project } from "../types";
 
 type CreateProjectFormProps = {
     onClose: () => void;
+    addProject: (project: Project) => void;
 };
 
-function CreateProjectForm({ onClose }: CreateProjectFormProps) {
+function CreateProjectForm({ onClose, addProject }: CreateProjectFormProps) {
     function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
 
-        console.log("Form submitted");
+        const formData = new FormData(event.currentTarget);
+        const newProject: Project = {
+            id: Number(Date.now().toString()),
+            name: formData.get("project-name") as string,
+            description: formData.get("project-description") as string,
+            creationDate: new Date().toISOString(),
+            status: "active",
+            tasks: [],
+        };
+
+        addProject(newProject);
         onClose();
     }
 
