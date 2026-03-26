@@ -182,6 +182,7 @@
     --red-warning-texts: var(--color-red);
     --red-warning-borders: var(--color-red);
     --red-warning-bgs: var(--color-red);
+    --red-warning-icons-fill: var(--color-red);
 
     /* Colors - Basic */
     --dark-gray-bgs: var(--color-dark-gray-500);
@@ -207,6 +208,7 @@
     --green-intense-icons-fill: var(--color-green-500);
     --green-intense-buttons-bg: var(--color-green-500);
     --green-intense-secundary-button-bg: var(--color-green-100);
+    --green-intense-secundary-button-border: var(--color-green-100);
     --green-intense-buttons-border: var(--color-green-500);
     --green-intense-bg: var(--color-green-500);
     --green-intense-textcolor: var(--color-green-500);
@@ -326,6 +328,11 @@ small {
 *::after {
     box-sizing: border-box;
     margin: 0;
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
 }
 
 body {

@@ -1,0 +1,31 @@
+.project-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-32px);
+}
+
+.project-info__description {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-8px);
+
+    .project-info__description-title {
+        font-weight: bold;
+    }
+}
+
+.project-info__information {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-16px);
+
+    .project-info__info-item {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-4px);
+    }
+
+    .project-info__info-label {
+        font-weight: bold;
+    }
+}

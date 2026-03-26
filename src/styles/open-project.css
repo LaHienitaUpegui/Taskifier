@@ -1,0 +1,36 @@
+.open-project {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-32px);
+    padding: var(--pad-24px);
+}
+
+.open-project__title-options {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-16px);
+
+    .open-project__options-container {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-8px);
+    }
+
+    .open-project__option {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        background-color: transparent;
+        padding: var(--pad-8px) var(--pad-8px);
+        border: 1px solid var(--main-white-borders);
+        border-radius: var(--border-radius-8px);
+    }
+
+    .open-project__option--selected {
+        background-color: transparent;
+        border: 1px solid var(--green-intense-border);
+        color: var(--green-intense-textcolor);
+        font-weight: bold;
+    }
+}

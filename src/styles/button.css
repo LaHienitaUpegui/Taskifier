@@ -1,4 +1,8 @@
 button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-8px);
     border: none;
     border-radius: var(--border-radius-8px);
     font-family: "Inter", sans-serif;
@@ -8,13 +12,19 @@ button {
 }
 
 .primary {
-    background-color: var(--green-intense-buttons-bg);
-    color: var(--dark-gray-textcolor);
-    border: none;
+    background-color: transparent;
+    color: var(--green-intense-textcolor);
+    border: 1px solid var(--green-intense-border);
 }
 
 .secundary {
-    background-color: var(--green-intense-secundary-button-bg);
-    border: none;
-    color: var(--dark-gray-textcolor);
+    background-color: transparent;
+    border: 1px solid var(--green-intense-secundary-button-border);
+    color: var(--green-intense-secundary-button-border);
+}
+
+.danger {
+    background-color: transparent;
+    border: 1px solid var(--red-warning-borders);
+    color: var(--red-warning-texts);
 }

@@ -17,7 +17,7 @@ function CreateProjectForm({ onClose }: CreateProjectFormProps) {
         <form className="create-project-form" onSubmit={handleSubmit}>
             <h3 className="create-project-form__title">Create a project</h3>
 
-            <div className="create-project-form__input-container">
+            <div className="create-project-form__inputs-container">
                 <div className="create-project-form__input">
                     <label
                         htmlFor="project-name"

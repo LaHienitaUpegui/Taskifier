@@ -1,0 +1,28 @@
+.pending-tasks {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-8px);
+}
+
+.pending-tasks__task-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-16px);
+    padding: var(--pad-16px);
+    border: 1px solid var(--neon-blue-border);
+    border-radius: var(--border-radius-8px);
+
+    .pending-tasks__task-title {
+        font-weight: bold;
+    }
+
+    .pending-tasks__buttons-container {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-8px);
+
+        button {
+            width: 100%;
+        }
+    }
+}

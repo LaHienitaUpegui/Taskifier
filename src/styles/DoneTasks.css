@@ -1,0 +1,17 @@
+.done-tasks {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-8px);
+}
+
+.done-tasks__task {
+    display: flex;
+    flex-direction: column;
+    padding: var(--pad-16px);
+    border: 1px solid var(--neon-blue-border);
+    border-radius: var(--border-radius-8px);
+
+    .done-tasks__task-title {
+        font-weight: bold;
+    }
+}

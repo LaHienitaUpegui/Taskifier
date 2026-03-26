@@ -1,10 +1,13 @@
+import type React from "react";
 import "../styles/button.css";
 
 type ButtonProps = {
     innerText: string;
-    buttonType: "primary" | "secundary";
+    buttonType: "primary" | "secundary" | "danger";
     onClickFunction?: () => void;
     isSubmitButton?: boolean;
+    icon?: React.ReactNode | null;
+    haveIcon?: boolean;
 };
 
 function Button({
@@ -12,6 +15,8 @@ function Button({
     buttonType,
     onClickFunction,
     isSubmitButton,
+    icon = null,
+    haveIcon = false,
 }: ButtonProps) {
     return (
         <button
@@ -19,6 +24,7 @@ function Button({
             onClick={onClickFunction}
             type={isSubmitButton ? "submit" : "button"}
         >
+            {haveIcon && icon}
             {innerText}
         </button>
     );
