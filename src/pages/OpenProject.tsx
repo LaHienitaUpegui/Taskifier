@@ -2,19 +2,18 @@ import ProjectInformation from "../components/ProjectInformation";
 import PendingTasks from "../components/PendingTasks";
 import DoneTasks from "../components/DoneTasks";
 import { useParams } from "react-router-dom";
-import "../styles/open-project.css";
-import mockProjectsData from "../data/projects.json";
-import type { Project } from "../types";
+import { useProjects } from "../services/useProjects";
 import { useState } from "react";
+import "../styles/open-project.css";
 
 function OpenProject() {
+    const { projects } = useProjects();
     const [optionSelected, setOptionSelected] = useState<string>("information");
 
-    const mockProjects: Project[] = mockProjectsData as Project[];
     const { id } = useParams();
     const idAsNumber = Number(id);
 
-    const project = mockProjects.find((p) => p.id === idAsNumber);
+    const project = projects.find((p) => p.id === idAsNumber);
     const projectPendingTasks = project?.tasks.filter(
         (task) => task.status === "pending",
     );
