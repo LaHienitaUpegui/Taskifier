@@ -30,10 +30,9 @@ function PendingTasks({ pendingTasks }: PendingTasksProps) {
         <div className="pending-tasks">
             {pendingTasks.length === 0 ? (
                 <div className="pending-tasks__empty">
-                    <h2 className="pending-tasks__title">Pending Tasks</h2>
-                    <p className="pending-tasks__message">
+                    <small className="pending-tasks__message">
                         You have no pending tasks. Great job!
-                    </p>
+                    </small>
                 </div>
             ) : (
                 <>

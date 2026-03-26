@@ -10,10 +10,9 @@ function DoneTasks({ doneTasks }: DoneTasksProps) {
         <div className="done-tasks">
             {doneTasks.length === 0 ? (
                 <div className="done-tasks__empty">
-                    <h2 className="done-tasks__title">Done Tasks</h2>
-                    <p className="done-tasks__message">
+                    <small className="done-tasks__message">
                         You have no completed tasks. Keep going!
-                    </p>
+                    </small>
                 </div>
             ) : (
                 <>

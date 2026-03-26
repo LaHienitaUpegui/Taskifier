@@ -33,9 +33,9 @@
     }
 
     .selected {
-        background-color: var(--green-intense-buttons-bg);
-        color: var(--dark-gray-textcolor);
-        border: none;
+        background-color: transparent;
+        color: var(--green-intense-textcolor);
+        border: 1px solid var(--green-intense-border);
     }
 
     .not-selected {
