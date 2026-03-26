@@ -39,6 +39,29 @@
     }
 }
 
+.create-project-form__added-tasks {
+    .create-project-form__added-tasks-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-8px);
+    }
+
+    .create-project-form__added-task-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--spacing-8px);
+    }
+
+    .create-project-form__task {
+        font-size: var(--fs-sm-12px);
+        color: var(--main-white-textcolor);
+    }
+}
+
 .create-project-form__buttons-container {
     display: flex;
     gap: var(--spacing-8px);
