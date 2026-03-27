@@ -9,10 +9,10 @@ type DeleteWarningProps = {
 function DeleteWarning({ onClose, onDelete }: DeleteWarningProps) {
     return (
         <div className="delete-warning">
-            <small className="delete-warning__title">
+            <p className="delete-warning__title">
                 Are you sure you want to delete the project? Once deleted it can
                 not be reverted
-            </small>
+            </p>
 
             <div className="delete-warning__buttons">
                 <Button
