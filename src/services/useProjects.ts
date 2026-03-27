@@ -1,5 +1,5 @@
 import { useState } from "react";
-import type { Project } from "../types";
+import type { Project, Task } from "../types";
 import { useNavigate } from "react-router-dom";
 
 export function useProjects() {
@@ -33,10 +33,28 @@ export function useProjects() {
         navigate("/");
     }
 
+    function addTaskToProject(project: Project, task: Task) {
+        const updatedProject = {
+            ...project,
+            tasks: [...project.tasks, task],
+        };
+
+        setProjects((prevProjects) => {
+            const updatedProjects = prevProjects.map((p) =>
+                p.id === project.id ? updatedProject : p,
+            );
+
+            localStorage.setItem("projects", JSON.stringify(updatedProjects));
+
+            return updatedProjects;
+        });
+    }
+
     return {
         projects,
         setProjects,
         addNewProject,
         deleteProject,
+        addTaskToProject,
     };
 }

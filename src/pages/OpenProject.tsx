@@ -7,7 +7,7 @@ import { useState } from "react";
 import "../styles/open-project.css";
 
 function OpenProject() {
-    const { projects, deleteProject } = useProjects();
+    const { projects, deleteProject, addTaskToProject } = useProjects();
     const [optionSelected, setOptionSelected] = useState<string>("information");
 
     const { id } = useParams();
@@ -58,8 +58,12 @@ function OpenProject() {
                     deleteProject={deleteProject}
                 />
             )}
-            {optionSelected === "tasks" && projectPendingTasks && (
-                <PendingTasks pendingTasks={projectPendingTasks} />
+            {optionSelected === "tasks" && projectPendingTasks && project && (
+                <PendingTasks
+                    pendingTasks={projectPendingTasks}
+                    addTaskToProject={addTaskToProject}
+                    project={project}
+                />
             )}
             {optionSelected === "done-tasks" && projectDoneTasks && (
                 <DoneTasks doneTasks={projectDoneTasks} />

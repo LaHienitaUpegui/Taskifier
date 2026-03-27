@@ -2,14 +2,20 @@ import Button from "./Button";
 import GeneralModal from "./GeneralModal";
 import AddNewTaskForm from "./AddNewTaskForm";
 import "../styles/PendingTasks.css";
-import type { Task } from "../types";
+import type { Task, Project } from "../types";
 import { useState } from "react";
 
 type PendingTasksProps = {
     pendingTasks: Task[];
+    addTaskToProject: (project: Project, task: Task) => void;
+    project: Project;
 };
 
-function PendingTasks({ pendingTasks }: PendingTasksProps) {
+function PendingTasks({
+    pendingTasks,
+    addTaskToProject,
+    project,
+}: PendingTasksProps) {
     const addIcon = (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -72,7 +78,11 @@ function PendingTasks({ pendingTasks }: PendingTasksProps) {
                 isOpen={isAddTaskModalOpen}
                 onClose={() => setIsAddTaskModalOpen(false)}
             >
-                <AddNewTaskForm onClose={() => setIsAddTaskModalOpen(false)} />
+                <AddNewTaskForm
+                    onClose={() => setIsAddTaskModalOpen(false)}
+                    addTask={addTaskToProject}
+                    project={project}
+                />
             </GeneralModal>
         </div>
     );
