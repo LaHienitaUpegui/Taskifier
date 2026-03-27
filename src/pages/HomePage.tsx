@@ -1,7 +1,7 @@
 import Button from "../components/Button";
 import GeneralModal from "../components/GeneralModal";
 import CreateProjectForm from "../components/CreateProjectForm";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useProjects } from "../services/useProjects";
 import { Link } from "react-router-dom";
 import "../styles/home-page.css";
@@ -14,10 +14,6 @@ function HomePage() {
     const activeProjects = projects.filter(
         (project) => project.status === "active",
     );
-
-    useEffect(() => {
-        console.log(`Active projects: ${activeProjects.length}`);
-    }, [activeProjects.length]);
 
     return (
         <div className="homepage">
