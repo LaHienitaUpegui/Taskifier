@@ -6,15 +6,19 @@ import type { Task, Project } from "../types";
 import { useState } from "react";
 
 type PendingTasksProps = {
+    project: Project;
     pendingTasks: Task[];
     addTaskToProject: (project: Project, task: Task) => void;
-    project: Project;
+    completeTask: (project: Project, taskId: number) => void;
+    deleteTaskFromProject: (project: Project, taskId: number) => void;
 };
 
 function PendingTasks({
+    project,
     pendingTasks,
     addTaskToProject,
-    project,
+    completeTask,
+    deleteTaskFromProject,
 }: PendingTasksProps) {
     const addIcon = (
         <svg
@@ -63,10 +67,16 @@ function PendingTasks({
                                 <Button
                                     innerText="Complete"
                                     buttonType="primary"
+                                    onClickFunction={() =>
+                                        completeTask(project, task.id)
+                                    }
                                 />
                                 <Button
                                     innerText="Delete"
                                     buttonType="danger"
+                                    onClickFunction={() =>
+                                        deleteTaskFromProject(project, task.id)
+                                    }
                                 />
                             </div>
                         </div>

@@ -40,7 +40,43 @@ export function useProjects() {
         };
 
         setProjects((prevProjects) => {
-            const updatedProjects = prevProjects.map((p) =>
+            const updatedProjects: Project[] = prevProjects.map((p) =>
+                p.id === project.id ? updatedProject : p,
+            );
+
+            localStorage.setItem("projects", JSON.stringify(updatedProjects));
+
+            return updatedProjects;
+        });
+    }
+
+    function completeTask(project: Project, taskId: number) {
+        const updatedProject: Project = {
+            ...project,
+            tasks: project.tasks.map((task) =>
+                task.id === taskId ? { ...task, status: "completed" } : task,
+            ),
+        };
+
+        setProjects((prevProjects) => {
+            const updatedProjects: Project[] = prevProjects.map((p) =>
+                p.id === project.id ? updatedProject : p,
+            );
+
+            localStorage.setItem("projects", JSON.stringify(updatedProjects));
+
+            return updatedProjects;
+        });
+    }
+
+    function deleteTaskFromProject(project: Project, taskId: number) {
+        const updatedProject: Project = {
+            ...project,
+            tasks: project.tasks.filter((task) => task.id !== taskId),
+        };
+
+        setProjects((prevProjects) => {
+            const updatedProjects: Project[] = prevProjects.map((p) =>
                 p.id === project.id ? updatedProject : p,
             );
 
@@ -56,5 +92,7 @@ export function useProjects() {
         addNewProject,
         deleteProject,
         addTaskToProject,
+        completeTask,
+        deleteTaskFromProject,
     };
 }
