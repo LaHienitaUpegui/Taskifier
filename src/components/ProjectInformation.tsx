@@ -1,12 +1,22 @@
 import Button from "./Button";
-import "../styles/ProjectInformation.css";
+import GeneralModal from "./GeneralModal";
+import DeleteWarning from "./DeleteWarning";
 import type { Project } from "../types";
+import "../styles/ProjectInformation.css";
+import { useState } from "react";
 
 type ProjectInformationProps = {
     project: Project;
+    deleteProject: (projectId: number) => void;
 };
 
-function ProjectInformation({ project }: ProjectInformationProps) {
+function ProjectInformation({
+    project,
+    deleteProject,
+}: ProjectInformationProps) {
+    const [doubleCheckModalOpen, setDoubleCheckModalOpen] =
+        useState<boolean>(false);
+
     const trashIcon = (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -85,7 +95,18 @@ function ProjectInformation({ project }: ProjectInformationProps) {
                 buttonType="danger"
                 haveIcon={true}
                 icon={trashIcon}
+                onClickFunction={() => setDoubleCheckModalOpen(true)}
             />
+
+            <GeneralModal
+                isOpen={doubleCheckModalOpen}
+                onClose={() => setDoubleCheckModalOpen(false)}
+            >
+                <DeleteWarning
+                    onClose={() => setDoubleCheckModalOpen(false)}
+                    onDelete={() => deleteProject(project.id)}
+                />
+            </GeneralModal>
         </div>
     );
 }
