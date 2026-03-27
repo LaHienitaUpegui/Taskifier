@@ -157,7 +157,7 @@ function CreateProjectForm({ onClose, addProject }: CreateProjectFormProps) {
                 />
                 <Button
                     innerText="Cancel"
-                    buttonType="secundary"
+                    buttonType="secondary"
                     onClickFunction={onClose}
                 />
             </div>

@@ -17,7 +17,7 @@ button {
     border: 1px solid var(--green-intense-border);
 }
 
-.secundary {
+.secondary {
     background-color: transparent;
     border: 1px solid var(--green-intense-secundary-button-border);
     color: var(--green-intense-secundary-button-border);

@@ -108,7 +108,7 @@ function AllProjects() {
                                     </Link>
                                     <Button
                                         innerText="See info"
-                                        buttonType="secundary"
+                                        buttonType="secondary"
                                         onClickFunction={() =>
                                             handleSetSelectedProject(project)
                                         }

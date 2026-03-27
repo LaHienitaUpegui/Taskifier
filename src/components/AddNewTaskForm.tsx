@@ -31,7 +31,7 @@ function AddNewTaskForm({ onClose }: AddNewTaskFormProps) {
                 />
                 <Button
                     innerText="Cancel"
-                    buttonType="secundary"
+                    buttonType="secondary"
                     onClickFunction={onClose}
                 />
             </div>
