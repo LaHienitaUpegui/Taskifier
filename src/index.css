@@ -222,7 +222,7 @@
     --orange-textcolor: var(--color-atomic-tangerine-500);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1023px) {
     :root {
         /* Font Sizes - Mobile */
         --h6-20px: 18px;
