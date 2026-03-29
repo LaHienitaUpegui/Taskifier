@@ -12,6 +12,10 @@
     .add-task__label {
         font-size: var(--fs-sm-12px);
         font-weight: bold;
+
+        @media (min-width: 1024px) {
+            font-size: var(--fs-p-16);
+        }
     }
 
     .add-task__input {
@@ -20,6 +24,12 @@
         border-radius: var(--border-radius-8px);
         background-color: transparent;
         color: var(--main-white-textcolor);
+
+        @media (min-width: 1024px) {
+            height: 42px;
+            padding: var(--pad-8px) var(--pad-16px);
+            font-size: var(--fs-p-16);
+        }
     }
 }
 
@@ -30,5 +40,9 @@
 
     button {
         width: 100%;
+
+        @media (min-width: 1024px) {
+            font-size: var(--fs-p-16);
+        }
     }
 }
