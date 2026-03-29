@@ -11,11 +11,13 @@ function DoneTasks({ doneTasks }: DoneTasksProps) {
             {doneTasks.length === 0 ? (
                 <div className="done-tasks__empty">
                     <small className="done-tasks__message">
-                        You have no completed tasks. Keep going!
+                        You have no completed tasks.
+                        <br />
+                        Keep going!
                     </small>
                 </div>
             ) : (
-                <>
+                <div className="done-tasks__tasks-container">
                     {doneTasks.map((task) => (
                         <div key={task.id} className="done-tasks__task">
                             <p className="done-tasks__task-title">
@@ -23,7 +25,7 @@ function DoneTasks({ doneTasks }: DoneTasksProps) {
                             </p>
                         </div>
                     ))}
-                </>
+                </div>
             )}
         </div>
     );
