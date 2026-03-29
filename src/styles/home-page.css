@@ -4,6 +4,10 @@
     gap: var(--spacing-24px);
     padding: var(--pad-24px);
     min-height: 100%;
+
+    @media (min-width: 1024px) {
+        padding: var(--pad-32px);
+    }
 }
 
 .homepage__projects-displayer {
