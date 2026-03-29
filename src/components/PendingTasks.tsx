@@ -38,22 +38,24 @@ function PendingTasks({
 
     return (
         <div className="pending-tasks">
+            <Button
+                innerText="Add new Task"
+                buttonType="primary"
+                haveIcon={true}
+                icon={addIcon}
+                onClickFunction={() => setIsAddTaskModalOpen(true)}
+            />
+
             {pendingTasks.length === 0 ? (
                 <div className="pending-tasks__empty">
                     <small className="pending-tasks__message">
-                        You have no pending tasks. Great job!
+                        You have no pending tasks.
+                        <br />
+                        Great job!
                     </small>
                 </div>
             ) : (
-                <>
-                    <Button
-                        innerText="Add new Task"
-                        buttonType="primary"
-                        haveIcon={true}
-                        icon={addIcon}
-                        onClickFunction={() => setIsAddTaskModalOpen(true)}
-                    />
-
+                <div className="pending-tasks__tasks-container">
                     {pendingTasks.map((task) => (
                         <div
                             key={task.id}
@@ -81,7 +83,7 @@ function PendingTasks({
                             </div>
                         </div>
                     ))}
-                </>
+                </div>
             )}
 
             <GeneralModal
