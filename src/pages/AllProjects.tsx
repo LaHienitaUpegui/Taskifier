@@ -14,6 +14,8 @@ function AllProjects() {
     const [selectedProject, setSelectedProject] = useState<Project | null>(
         null,
     );
+    const [selectedDesktopProject, setSelectedDesktopProject] =
+        useState<Project | null>(null);
     const [statusSelected, setStatusSelected] = useState<string>("active");
     const [searchTerm, setSearchTerm] = useState<string>("");
     const [createProjectModalOpen, setCreateProjectModalOpen] =
@@ -34,105 +36,157 @@ function AllProjects() {
         });
     }, [projects, statusSelected, searchTerm]);
 
-    function handleSetSelectedProject(project: Project | null) {
-        setSelectedProject(project);
+    function handleSeeInfoClick(project: Project) {
+        const isMobile = window.innerWidth < 1024;
+
+        if (isMobile) {
+            setSelectedProject(project);
+        } else {
+            setSelectedDesktopProject(project);
+        }
     }
 
     return (
-        <div className="all-projects-page">
-            <section className="title-and-filters">
-                <h1>All Projects</h1>
+        <div className="all-projects">
+            <section className="all-projects__container">
+                <div className="all-projects__header">
+                    <h1>All Projects</h1>
 
-                <div className="filter-options">
-                    <div className="project-statuses">
-                        <small
-                            className={`status ${statusSelected === "active" ? "selected" : "not-selected"}`}
-                            onClick={() => setStatusSelected("active")}
-                        >
-                            Active
-                        </small>
-                        <small
-                            className={`status ${statusSelected === "completed" ? "selected" : "not-selected"}`}
-                            onClick={() => setStatusSelected("completed")}
-                        >
-                            Completed
-                        </small>
+                    <div className="all-projects__filters">
+                        <div className="all-projects__statuses">
+                            <small
+                                className={`all-projects__status ${statusSelected === "active" ? "all-projects__status-selected" : "all-projects__status-not-selected"}`}
+                                onClick={() => setStatusSelected("active")}
+                            >
+                                Active
+                            </small>
+                            <small
+                                className={`all-projects__status ${statusSelected === "completed" ? "all-projects__status-selected" : "all-projects__status-not-selected"}`}
+                                onClick={() => setStatusSelected("completed")}
+                            >
+                                Completed
+                            </small>
+                        </div>
+
+                        <input
+                            type="text"
+                            className="all-projects__searchbar"
+                            placeholder="Search projects..."
+                            value={searchTerm}
+                            onChange={(e) => setSearchTerm(e.target.value)}
+                        />
+
+                        <Button
+                            buttonType="blue-button"
+                            innerText="Create a project"
+                            onClickFunction={() =>
+                                setCreateProjectModalOpen(true)
+                            }
+                            haveIcon={true}
+                            icon={
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        fill="var(--neon-blue-buttons-bg)"
+                                        d="M12 4a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2h-6v6a1 1 0 1 1-2 0v-6H5a1 1 0 1 1 0-2h6V5a1 1 0 0 1 1-1"
+                                    />
+                                </svg>
+                            }
+                            customClassName="all-projects__create-button--desktop"
+                        />
                     </div>
+                </div>
 
-                    <input
-                        type="text"
-                        className="search-bar"
-                        placeholder="Search projects..."
-                        value={searchTerm}
-                        onChange={(e) => setSearchTerm(e.target.value)}
-                    />
+                <div className="all-projects__list">
+                    {statusSelected === "active" && (
+                        <Button
+                            buttonType="blue-button"
+                            innerText="Create a project"
+                            onClickFunction={() =>
+                                setCreateProjectModalOpen(true)
+                            }
+                            haveIcon={true}
+                            icon={
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        fill="var(--neon-blue-buttons-bg)"
+                                        d="M12 4a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2h-6v6a1 1 0 1 1-2 0v-6H5a1 1 0 1 1 0-2h6V5a1 1 0 0 1 1-1"
+                                    />
+                                </svg>
+                            }
+                            customClassName="all-projects__create-button--mobile"
+                        />
+                    )}
+
+                    {filteredProjects.length > 0 ? (
+                        <>
+                            {filteredProjects.map((project) => (
+                                <div
+                                    key={project.id}
+                                    className="all-projects__project"
+                                    onClick={() => handleSeeInfoClick(project)}
+                                >
+                                    <h6 className="all-projects__project-title">
+                                        {project.name}
+                                    </h6>
+                                    <div className="all-projects__project-actions">
+                                        <Link to={`/projects/${project.id}`}>
+                                            <Button
+                                                innerText="Open project"
+                                                buttonType="primary"
+                                            />
+                                        </Link>
+                                        <Button
+                                            innerText="See info"
+                                            buttonType="secondary"
+                                            onClickFunction={() =>
+                                                handleSeeInfoClick(project)
+                                            }
+                                            customClassName="all-projects__see-info-button"
+                                        />
+                                    </div>
+                                </div>
+                            ))}
+                        </>
+                    ) : (
+                        <div className="all-projects__no-projects">
+                            <p>No projects found</p>
+                            <small>Check if the name is correct</small>
+                        </div>
+                    )}
                 </div>
             </section>
 
-            <section className="projects-displayer">
-                {statusSelected === "active" && (
-                    <Button
-                        buttonType="blue-button"
-                        innerText="Create a new project"
-                        onClickFunction={() => setCreateProjectModalOpen(true)}
-                        haveIcon={true}
-                        icon={
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                            >
-                                <path
-                                    fill="var(--neon-blue-buttons-bg)"
-                                    d="M12 4a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2h-6v6a1 1 0 1 1-2 0v-6H5a1 1 0 1 1 0-2h6V5a1 1 0 0 1 1-1"
-                                />
-                            </svg>
-                        }
+            <section className="all-projects__project-info">
+                {selectedDesktopProject ? (
+                    <SelectedProjectInfo
+                        project={selectedDesktopProject}
+                        customClassName="selected-project-info--desktop"
                     />
-                )}
-
-                {filteredProjects.length > 0 ? (
-                    <>
-                        {filteredProjects.map((project) => (
-                            <div key={project.id} className="project-container">
-                                <h6 className="project-title">
-                                    {project.name}
-                                </h6>
-                                <div className="buttons">
-                                    <Link to={`/projects/${project.id}`}>
-                                        <Button
-                                            innerText="Open project"
-                                            buttonType="primary"
-                                        />
-                                    </Link>
-                                    <Button
-                                        innerText="See info"
-                                        buttonType="secondary"
-                                        onClickFunction={() =>
-                                            handleSetSelectedProject(project)
-                                        }
-                                    />
-                                </div>
-                            </div>
-                        ))}
-                    </>
                 ) : (
-                    <div className="no-projects-found">
-                        <p>No projects found</p>
-                        <small>Check if the name is correct</small>
+                    <div>
+                        <h6>Select a project to see its details</h6>
                     </div>
                 )}
             </section>
 
             <GeneralModal
                 isOpen={!!selectedProject}
-                onClose={() => handleSetSelectedProject(null)}
+                onClose={() => setSelectedProject(null)}
             >
                 {selectedProject && (
                     <SelectedProjectInfo
                         project={selectedProject}
-                        onClose={() => handleSetSelectedProject(null)}
+                        onClose={() => setSelectedProject(null)}
                     />
                 )}
             </GeneralModal>
