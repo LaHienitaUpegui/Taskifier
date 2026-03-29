@@ -5,12 +5,17 @@ import { Link } from "react-router-dom";
 
 type SelectedProjectInfoProps = {
     project: Project;
-    onClose: () => void;
+    onClose?: () => void;
+    customClassName?: string;
 };
 
-function SelectedProjectInfo({ project, onClose }: SelectedProjectInfoProps) {
+function SelectedProjectInfo({
+    project,
+    onClose,
+    customClassName,
+}: SelectedProjectInfoProps) {
     return (
-        <div className="selected-project-info">
+        <div className={`selected-project-info ${customClassName || ""}`}>
             <div className="title-and-desc">
                 <h3>{project.name}</h3>
                 <small>{project.description}</small>

@@ -13,6 +13,7 @@ type ButtonProps = {
     isSubmitButton?: boolean;
     icon?: React.ReactNode | null;
     haveIcon?: boolean;
+    customClassName?: string;
 };
 
 function Button({
@@ -22,10 +23,11 @@ function Button({
     isSubmitButton,
     icon = null,
     haveIcon = false,
+    customClassName = "",
 }: ButtonProps) {
     return (
         <button
-            className={buttonType}
+            className={`${buttonType} ${customClassName}`}
             onClick={onClickFunction}
             type={isSubmitButton ? "submit" : "button"}
         >
