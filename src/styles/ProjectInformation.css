@@ -29,3 +29,17 @@
         font-weight: bold;
     }
 }
+
+.project-info__actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-16px);
+
+    @media (min-width: 600px) {
+        flex-direction: row;
+    }
+
+    button {
+        width: 100%;
+    }
+}

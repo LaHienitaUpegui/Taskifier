@@ -38,13 +38,15 @@ function PendingTasks({
 
     return (
         <div className="pending-tasks">
-            <Button
-                innerText="Add new Task"
-                buttonType="primary"
-                haveIcon={true}
-                icon={addIcon}
-                onClickFunction={() => setIsAddTaskModalOpen(true)}
-            />
+            {project.status !== "completed" && (
+                <Button
+                    innerText="Add new Task"
+                    buttonType="primary"
+                    haveIcon={true}
+                    icon={addIcon}
+                    onClickFunction={() => setIsAddTaskModalOpen(true)}
+                />
+            )}
 
             {pendingTasks.length === 0 ? (
                 <div className="pending-tasks__empty">

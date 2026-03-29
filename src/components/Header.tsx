@@ -86,7 +86,7 @@ function Header() {
                     </div>
 
                     <img
-                        src="../../public/imgs/logo_icon.svg"
+                        src="/imgs/logo_icon.svg"
                         alt="Taskifier logo icon"
                         className="header__taskifier-icon"
                     />

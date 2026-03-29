@@ -10,6 +10,7 @@ function OpenProject() {
     const {
         projects,
         deleteProject,
+        completeProject,
         addTaskToProject,
         completeTask,
         deleteTaskFromProject,
@@ -62,6 +63,7 @@ function OpenProject() {
                 <ProjectInformation
                     project={project}
                     deleteProject={deleteProject}
+                    completeProject={completeProject}
                 />
             )}
             {optionSelected === "tasks" && projectPendingTasks && project && (

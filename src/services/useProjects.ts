@@ -22,6 +22,25 @@ export function useProjects() {
         });
     }
 
+    function completeProject(projectId: number) {
+        const updatedProject: Project = {
+            ...projects.find((p) => p.id === projectId)!,
+            status: "completed",
+        };
+
+        setProjects((prevProjects) => {
+            const updatedProjects: Project[] = prevProjects.map((p) =>
+                p.id === projectId ? updatedProject : p,
+            );
+
+            localStorage.setItem("projects", JSON.stringify(updatedProjects));
+
+            return updatedProjects;
+        });
+
+        navigate("/projects");
+    }
+
     function deleteProject(projectId: number) {
         const updatedProjects = projects.filter(
             (project) => project.id !== projectId,
@@ -90,6 +109,7 @@ export function useProjects() {
         projects,
         setProjects,
         addNewProject,
+        completeProject,
         deleteProject,
         addTaskToProject,
         completeTask,

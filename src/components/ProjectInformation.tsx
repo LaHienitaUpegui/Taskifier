@@ -7,33 +7,55 @@ import { useState } from "react";
 
 type ProjectInformationProps = {
     project: Project;
+    completeProject: (projectId: number) => void;
     deleteProject: (projectId: number) => void;
 };
 
 function ProjectInformation({
     project,
+    completeProject,
     deleteProject,
 }: ProjectInformationProps) {
     const [doubleCheckModalOpen, setDoubleCheckModalOpen] =
         useState<boolean>(false);
 
-    const trashIcon = (
-        <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-        >
-            <g fill="none">
+    const icons = {
+        trashIcon: (
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+            >
+                <g fill="none">
+                    <path
+                        fillRule="evenodd"
+                        clipRule="evenodd"
+                        d="M11 5a1 1 0 0 0-1 1h4a1 1 0 0 0-1-1h-2zm0-2a3 3 0 0 0-3 3H4a1 1 0 0 0 0 2h1v10a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8h1a1 1 0 1 0 0-2h-4a3 3 0 0 0-3-3h-2zm0 8a1 1 0 1 0-2 0v5a1 1 0 1 0 2 0v-5zm4 0a1 1 0 1 0-2 0v5a1 1 0 1 0 2 0v-5z"
+                        fill="var(--red-warning-icons-fill)"
+                    />
+                </g>
+            </svg>
+        ),
+
+        completeIcon: (
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+            >
                 <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M11 5a1 1 0 0 0-1 1h4a1 1 0 0 0-1-1h-2zm0-2a3 3 0 0 0-3 3H4a1 1 0 0 0 0 2h1v10a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8h1a1 1 0 1 0 0-2h-4a3 3 0 0 0-3-3h-2zm0 8a1 1 0 1 0-2 0v5a1 1 0 1 0 2 0v-5zm4 0a1 1 0 1 0-2 0v5a1 1 0 1 0 2 0v-5z"
-                    fill="var(--red-warning-icons-fill)"
+                    fill="none"
+                    stroke="var(--green-intense-icons-fill)"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M20 6L9 17l-5-5"
                 />
-            </g>
-        </svg>
-    );
+            </svg>
+        ),
+    };
 
     return (
         <div className="project-info">
@@ -90,13 +112,25 @@ function ProjectInformation({
                 </div>
             </div>
 
-            <Button
-                innerText="Delete project"
-                buttonType="danger"
-                haveIcon={true}
-                icon={trashIcon}
-                onClickFunction={() => setDoubleCheckModalOpen(true)}
-            />
+            <div className="project-info__actions">
+                {project.status !== "completed" && (
+                    <Button
+                        innerText="Complete project"
+                        buttonType="primary"
+                        haveIcon={true}
+                        icon={icons.completeIcon}
+                        onClickFunction={() => completeProject(project.id)}
+                    />
+                )}
+
+                <Button
+                    innerText="Delete project"
+                    buttonType="danger"
+                    haveIcon={true}
+                    icon={icons.trashIcon}
+                    onClickFunction={() => setDoubleCheckModalOpen(true)}
+                />
+            </div>
 
             <GeneralModal
                 isOpen={doubleCheckModalOpen}
