@@ -11,12 +11,28 @@
     flex-direction: column;
     gap: var(--spacing-8px);
     height: 100%;
+
+    @media (min-width: 1024px) {
+        flex: 1;
+        position: relative;
+    }
 }
 
 .homepage__no-projects {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-16px);
+
+    @media (min-width: 1024px) {
+        max-width: 520px;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 1px solid var(--neon-blue-border);
+        border-radius: var(--border-radius-16px);
+        padding: var(--pad-32px);
+    }
 }
 
 .homepage__project-container {

@@ -314,6 +314,11 @@ small {
     line-height: var(--lh-sm-18px);
     font-family: "Inter", sans-serif;
     color: var(--main-white-textcolor);
+
+    @media (min-width: 1024px) {
+        font-size: var(--fs-p-16);
+        line-height: var(--lh-p-24px);
+    }
 }
 
 .xsm {
@@ -351,4 +356,10 @@ body {
     row-gap: var(--spacing-16px);
     padding: var(--pad-0px) var(--pad-24px);
     background-color: var(--dark-gray-bgs);
+
+    @media (min-width: 1024px) {
+        grid-template-rows: 80px 1fr 80px;
+        padding: var(--pad-32px) var(--pad-96px);
+        row-gap: var(--spacing-48px);
+    }
 }
