@@ -52,6 +52,10 @@
     a {
         width: fit-content;
     }
+
+    @media (min-width: 1024px) {
+        padding: var(--pad-24px);
+    }
 }
 
 .homepage__title-and-desc {
