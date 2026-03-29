@@ -7,7 +7,7 @@ import { useState } from "react";
 
 type ProjectInformationProps = {
     project: Project;
-    completeProject: (projectId: number) => void;
+    completeProject: (project: Project) => void;
     deleteProject: (projectId: number) => void;
 };
 
@@ -119,7 +119,7 @@ function ProjectInformation({
                         buttonType="primary"
                         haveIcon={true}
                         icon={icons.completeIcon}
-                        onClickFunction={() => completeProject(project.id)}
+                        onClickFunction={() => completeProject(project)}
                     />
                 )}
 

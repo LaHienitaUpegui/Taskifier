@@ -22,15 +22,12 @@ export function useProjects() {
         });
     }
 
-    function completeProject(projectId: number) {
-        const updatedProject: Project = {
-            ...projects.find((p) => p.id === projectId)!,
-            status: "completed",
-        };
+    function completeProject(project: Project) {
+        const updatedProject: Project = { ...project, status: "completed" };
 
         setProjects((prevProjects) => {
             const updatedProjects: Project[] = prevProjects.map((p) =>
-                p.id === projectId ? updatedProject : p,
+                p.id === project.id ? updatedProject : p,
             );
 
             localStorage.setItem("projects", JSON.stringify(updatedProjects));
@@ -49,7 +46,7 @@ export function useProjects() {
         localStorage.setItem("projects", JSON.stringify(updatedProjects));
 
         setProjects(updatedProjects);
-        navigate("/");
+        navigate("/projects");
     }
 
     function addTaskToProject(project: Project, task: Task) {
