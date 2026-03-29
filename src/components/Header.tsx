@@ -12,7 +12,7 @@ function Header() {
                     <img
                         src="/imgs/taskifier_logo.svg"
                         alt="Taskifier Logo"
-                        className="taskifier-logo"
+                        className="header__logo"
                     />
                 </NavLink>
                 <svg
@@ -20,7 +20,7 @@ function Header() {
                     width="32"
                     height="32"
                     viewBox="0 0 24 24"
-                    className="menu-icon"
+                    className="header__menu-icon"
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
                 >
                     <path
@@ -34,19 +34,31 @@ function Header() {
                 </svg>
 
                 <nav
-                    className={`nav__container ${isMenuOpen ? "nav__container-open" : ""}`}
+                    className={`header__nav ${isMenuOpen ? "header__nav-open" : ""}`}
                 >
-                    <div className="nav-and-items">
-                        <div className="title-and-icon">
+                    <div className="header__nav-items">
+                        <div className="header__title-icon">
                             <p>Navigation menu</p>
 
-                            <button onClick={() => setIsMenuOpen(false)}>
-                                Close
-                            </button>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="32"
+                                height="32"
+                                viewBox="0 0 20 20"
+                                className="header__close-button"
+                                onClick={() => setIsMenuOpen(false)}
+                            >
+                                <path
+                                    fill="var(--red-warning-texts)"
+                                    fillRule="evenodd"
+                                    d="M4.293 4.293a1 1 0 0 1 1.414 0L10 8.586l4.293-4.293a1 1 0 1 1 1.414 1.414L11.414 10l4.293 4.293a1 1 0 0 1-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 0 1-1.414-1.414L8.586 10L4.293 5.707a1 1 0 0 1 0-1.414"
+                                    clipRule="evenodd"
+                                />
+                            </svg>
                         </div>
 
-                        <ul className="nav-list">
-                            <li className="nav__item">
+                        <ul className="header__nav-list">
+                            <li className="header__nav-item">
                                 <NavLink
                                     to="/"
                                     onClick={() => setIsMenuOpen(false)}
@@ -54,7 +66,7 @@ function Header() {
                                     Home
                                 </NavLink>
                             </li>
-                            <li className="nav__item">
+                            <li className="header__nav-item">
                                 <NavLink
                                     to="/projects"
                                     onClick={() => setIsMenuOpen(false)}
@@ -62,7 +74,7 @@ function Header() {
                                     Projects
                                 </NavLink>
                             </li>
-                            <li className="nav__item">
+                            <li className="header__nav-item">
                                 <NavLink
                                     to="/statistics"
                                     onClick={() => setIsMenuOpen(false)}
@@ -73,15 +85,11 @@ function Header() {
                         </ul>
                     </div>
 
-                    <div
-                        className="logo"
-                        style={{
-                            width: "32px",
-                            height: "32px",
-                            backgroundColor: "blue",
-                            borderRadius: "50%",
-                        }}
-                    ></div>
+                    <img
+                        src="../../public/imgs/logo_icon.svg"
+                        alt="Taskifier logo icon"
+                        className="header__taskifier-icon"
+                    />
                 </nav>
             </header>
         </>
