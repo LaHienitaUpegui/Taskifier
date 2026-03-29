@@ -3,7 +3,12 @@ import "../styles/button.css";
 
 type ButtonProps = {
     innerText?: string;
-    buttonType: "primary" | "secondary" | "danger" | "blue-button";
+    buttonType:
+        | "primary"
+        | "secondary"
+        | "danger"
+        | "blue-button"
+        | "orange-button";
     onClickFunction?: () => void;
     isSubmitButton?: boolean;
     icon?: React.ReactNode | null;
