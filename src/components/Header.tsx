@@ -74,14 +74,6 @@ function Header() {
                                     Projects
                                 </NavLink>
                             </li>
-                            <li className="header__nav-item">
-                                <NavLink
-                                    to="/statistics"
-                                    onClick={() => setIsMenuOpen(false)}
-                                >
-                                    Statistics
-                                </NavLink>
-                            </li>
                         </ul>
                     </div>
 
