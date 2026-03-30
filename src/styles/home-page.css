@@ -37,6 +37,10 @@
         border-radius: var(--border-radius-16px);
         padding: var(--pad-32px);
     }
+
+    .homepage__no-projects-message {
+        text-align: center;
+    }
 }
 
 .homepage__project-container {
@@ -49,12 +53,18 @@
     border: 1px solid var(--neon-blue-border);
     border-radius: var(--border-radius-16px);
 
-    a {
-        width: fit-content;
+    transition: box-shadow 0.2s ease;
+
+    &:hover {
+        box-shadow: 0 0 1px 8px var(--main-white-alpha-10);
     }
 
     @media (min-width: 1024px) {
         padding: var(--pad-24px);
+    }
+
+    a {
+        width: fit-content;
     }
 }
 

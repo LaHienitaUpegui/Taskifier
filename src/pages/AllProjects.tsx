@@ -132,7 +132,7 @@ function AllProjects() {
                             {filteredProjects.map((project) => (
                                 <div
                                     key={project.id}
-                                    className="all-projects__project"
+                                    className={`all-projects__project ${selectedDesktopProject?.id === project.id ? "all-projects__project--selected" : ""}`}
                                     onClick={() => handleSeeInfoClick(project)}
                                 >
                                     <h6 className="all-projects__project-title">

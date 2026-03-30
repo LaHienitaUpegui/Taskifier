@@ -8,5 +8,17 @@
         display: flex;
         align-items: center;
         justify-content: center;
+
+        svg,
+        path {
+            transition: fill 0.2s ease;
+        }
+
+        &:hover {
+            svg,
+            path {
+                fill: var(--neon-blue-textcolor);
+            }
+        }
     }
 }

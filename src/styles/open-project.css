@@ -47,4 +47,12 @@
         color: var(--green-intense-textcolor);
         font-weight: bold;
     }
+
+    .open-project__option--unselected {
+        transition: background-color 0.2s ease;
+
+        &:hover {
+            background-color: var(--main-white-alpha-10);
+        }
+    }
 }

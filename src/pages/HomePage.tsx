@@ -23,8 +23,10 @@ function HomePage() {
                 {activeProjects.length === 0 ? (
                     <div className="homepage__no-projects">
                         <small className="homepage__no-projects-message">
-                            Still don't have any projects? Create your first one
-                            and start managing your tasks today!
+                            Still don't have any projects?
+                            <br />
+                            Create your first one and start managing your tasks
+                            today!
                         </small>
 
                         <Button

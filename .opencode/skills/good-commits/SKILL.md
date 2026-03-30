@@ -1,6 +1,7 @@
 ---
 name: good-commits
 description: Generate well-structured, meaningful commit messages following industry best practices
+user-invocable: true
 ---
 
 # Good Commit Messages Skill
@@ -30,7 +31,7 @@ This skill helps generate well-structured, meaningful commit messages following 
 | `refactor` | Code refactoring without changing functionality  |
 | `perf`     | Performance improvements                         |
 | `test`     | Adding or updating tests                         |
-| `chore`    | Maintenance tasks (dependencies, build configs) |
+| `chore`    | Maintenance tasks (dependencies, build configs)  |
 | `ci`       | CI/CD changes                                    |
 | `revert`   | Reverting a previous commit                      |
 
