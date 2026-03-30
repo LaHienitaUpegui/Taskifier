@@ -33,6 +33,7 @@
 
     @media (min-width: 1024px) {
         flex-direction: row;
+        gap: var(--spacing-16px);
         flex-wrap: wrap;
     }
 }
@@ -44,6 +45,12 @@
     padding: var(--pad-16px);
     border: 1px solid var(--neon-blue-border);
     border-radius: var(--border-radius-8px);
+
+    transition: box-shadow 0.2s ease;
+
+    &:hover {
+        box-shadow: 0 0 1px 8px var(--main-white-alpha-10);
+    }
 
     .pending-tasks__task-title {
         font-weight: bold;

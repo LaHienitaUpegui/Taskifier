@@ -131,6 +131,7 @@ function CreateProjectForm({ onClose, addProject }: CreateProjectFormProps) {
                                         width="24"
                                         height="24"
                                         viewBox="0 0 20 20"
+                                        className="create-project-form__remove-task-icon"
                                         onClick={() =>
                                             handleRemoveTask(task.id)
                                         }

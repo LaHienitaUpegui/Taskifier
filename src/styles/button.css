@@ -20,28 +20,58 @@ button {
     background-color: transparent;
     color: var(--green-intense-textcolor);
     border: 1px solid var(--green-intense-border);
+
+    transition: background-color 0.2s ease;
+
+    &:hover {
+        background-color: var(--green-intense-alpha-10);
+    }
 }
 
 .secondary {
     background-color: transparent;
     border: 1px solid var(--green-intense-secundary-button-border);
     color: var(--green-intense-secundary-button-border);
+
+    transition: background-color 0.2s ease;
+
+    &:hover {
+        background-color: var(--green-intense-secundary-alpha-10);
+    }
 }
 
 .danger {
     background-color: transparent;
     border: 1px solid var(--red-warning-borders);
     color: var(--red-warning-texts);
+
+    transition: background-color 0.2s ease;
+
+    &:hover {
+        background-color: var(--red-warning-alpha-10);
+    }
 }
 
 .blue-button {
     background-color: transparent;
     border: 1px solid var(--neon-blue-border);
     color: var(--neon-blue-buttons-bg);
+
+    transition: background-color 0.2s ease;
+
+    &:hover {
+        background-color: var(--neon-blue-alpha-10);
+    }
 }
 
 .orange-button {
     background-color: transparent;
     border: 1px solid var(--orange-buttons-border);
     color: var(--orange-textcolor);
+
+    transition: background-color 0.2s ease;
+
+    &:hover {
+        background-color: var(--orange-alpha-10);
+    }
 }

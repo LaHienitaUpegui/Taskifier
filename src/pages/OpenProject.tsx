@@ -39,19 +39,19 @@ function OpenProject() {
 
                 <div className="open-project__options-container">
                     <small
-                        className={`open-project__option ${optionSelected === "information" ? "open-project__option--selected" : ""}`}
+                        className={`open-project__option ${optionSelected === "information" ? "open-project__option--selected" : "open-project__option--unselected"}`}
                         onClick={() => setOptionSelected("information")}
                     >
                         Information
                     </small>
                     <small
-                        className={`open-project__option ${optionSelected === "tasks" ? "open-project__option--selected" : ""}`}
+                        className={`open-project__option ${optionSelected === "tasks" ? "open-project__option--selected" : "open-project__option--unselected"}`}
                         onClick={() => setOptionSelected("tasks")}
                     >
                         Tasks
                     </small>
                     <small
-                        className={`open-project__option ${optionSelected === "done-tasks" ? "open-project__option--selected" : ""}`}
+                        className={`open-project__option ${optionSelected === "done-tasks" ? "open-project__option--selected" : "open-project__option--unselected"}`}
                         onClick={() => setOptionSelected("done-tasks")}
                     >
                         Done tasks

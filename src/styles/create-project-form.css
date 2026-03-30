@@ -77,6 +77,12 @@
 }
 
 .create-project-form__added-tasks {
+    @media (min-width: 1024px) {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-16px);
+    }
+
     .create-project-form__added-tasks-list {
         list-style: none;
         padding: 0;
@@ -96,6 +102,21 @@
     .create-project-form__task {
         font-size: var(--fs-sm-12px);
         color: var(--main-white-textcolor);
+
+        @media (min-width: 1024px) {
+            font-size: var(--fs-p-16px);
+            line-height: var(--lh-p-24px);
+        }
+    }
+
+    .create-project-form__remove-task-icon {
+        cursor: pointer;
+
+        &:hover {
+            background-color: var(--red-warning-alpha-10);
+            border: 1px solid var(--red-warning-borders);
+            border-radius: var(--border-radius-8px);
+        }
     }
 }
 
